@@ -20,24 +20,6 @@ read_table <- function(
     }
 }
 
-read_basic_data <- function(table_name) {
-    basic_data_dir <- 'D:/馔山数据/'
-    if (table_name=='allian_structure') {
-        table_content <- read_table(paste(
-        basic_data_dir, '联营架构.xlsx', sep=''), 1)
-        return(table_content)
-    }
-
-    if (table_name=='all_restaurant_info') {
-        all_restaurant_info <- read_table(
-                               paste(basic_data_dir,
-                               '葵花宝典-联营编号精简.xlsx',
-                               sep=''), 1)
-        return(all_restaurant_info)
-    }
-
-}
-
 read_tables <- function(report_date, table_name) {
 
     table_direct <- paste('D:/馔山数据/联营日报/',
@@ -146,6 +128,24 @@ read_tables <- function(report_date, table_name) {
 }
 
 #读取报表调用的function
+read_basic_data <- function(table_name) {
+    basic_data_dir <- 'D:/馔山数据/'
+    if (table_name=='allian_structure') {
+        table_content <- read_table(paste(
+        basic_data_dir, '联营架构.xlsx', sep=''), 1)
+        return(table_content)
+    }
+
+    if (table_name=='all_restaurant_info') {
+        all_restaurant_info <- read_table(
+                               paste(basic_data_dir,
+                               '葵花宝典-联营编号精简.xlsx',
+                               sep=''), 1)
+        return(all_restaurant_info)
+    }
+
+}
+
 all_cooperate_restaurant <- function(report_date){
 
     all_cooperate_restaurant <- read_tables(
