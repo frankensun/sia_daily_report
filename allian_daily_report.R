@@ -312,7 +312,7 @@ print(paste(date(), '计算日报数据'))
     })
 
 print(paste(date(), '筛选日报'))
-daily_report_final=subset(daily_report, select=c(虚拟名, id, city_name,
+daily_report_final=subset(daily_report, select=c(原店名, id, city_name,
 品牌, 实体店编号, total, 产品收入, vaild_ord_num, 客单价, invalid_ord_num,
 无效订单率, 曝光量, 用户点击率, user_number, 访客数, 用户转化率,
 ele_new_user_number, 平台新占比, sia_new_user_number,SIA新占比, yuding_num,
