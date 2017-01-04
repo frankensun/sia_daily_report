@@ -100,7 +100,7 @@ read_tables <- function(report_date, table_name) {
         table_content <- read_table(
                          paste(table_direct,
                          report_date,
-                         'sia日报.xlsx', sep=''), 1)
+                         'SIA日报.xlsx', sep=''), 1)
         return(table_content)
     }
 
@@ -263,17 +263,17 @@ print(paste(date(), '合并曝光量'))
 rm(impressions)
 
 #读取米饭数量
-print(paste(date(), '读取米饭量'))
-    rice_amount <- read_tables(report_date,
-                             'rice_amount')
-print(paste(date(), '米饭量读取完'))
+#print(paste(date(), '读取米饭量'))
+#    rice_amount <- read_tables(report_date,
+#                             'rice_amount')
+#print(paste(date(), '米饭量读取完'))
 
 #合并米饭量
-print(paste(date(), '合并米饭量'))
-    sia_report_with_info = merge(
-    sia_report_with_info, rice_amount,
-    by.c='id', by.d='restaurant_id', all.x=TRUE)
-rm(rice_amount)
+#print(paste(date(), '合并米饭量'))
+#    sia_report_with_info = merge(
+#    sia_report_with_info, rice_amount,
+#    by.c='id', by.d='restaurant_id', all.x=TRUE)
+#rm(rice_amount)
 
 #sia_report_with_info[sia_report_with_info=='NULL'] <- '#N/A'
 
@@ -301,8 +301,9 @@ print(paste(date(), '计算日报数据'))
     总优惠力度<-总优惠/产品收入
     配送范围额<-as.numeric(as.character(total_amount))
     配送范围比<-产品收入/配送范围额
-    米饭总量  <-as.numeric(0)
-    米饭总量  <-as.numeric(as.character(米饭))+as.numeric(as.character(黄焖鸡米饭))+as.numeric(as.character(再来一碗白米饭))+as.numeric(as.character(客官再来碗饭))+as.numeric(as.character(承让承让米饭))
+    米饭总量  <-''
+    #米饭总量  <-as.numeric(0)
+    #米饭总量  <-as.numeric(as.character(米饭))+as.numeric(as.character(黄焖鸡米饭))+as.numeric(as.character(再来一碗白米饭))+as.numeric(as.character(客官再来碗饭))+as.numeric(as.character(承让承让米饭))
     #米饭总量  <-米饭+黄焖鸡米饭+再来一碗白米饭+客官再来碗饭+承让承让米饭
     门店品牌数<-''
     材料成本  <-''
